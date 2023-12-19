@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Utility.jpeg" alt="EasyUtility">
+  <img src=".\Utility.Lib\Utility.jpeg" alt="EasyUtility">
 </div>
 
 # EasyUtility
