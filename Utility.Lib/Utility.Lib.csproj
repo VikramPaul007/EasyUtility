@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>EasyUtility.For.All</PackageId>
-    <Author>Vikram Paul</Author>
+    <Authors>Vikram Paul</Authors>
     <Version>1.0.0</Version>
     <Product>EasyUtility</Product>
     <Description>'EasyUtility' is a .NET library that contains practical features needed for daily development. Its goal is to assist developers worldwide in avoiding the need to create 'The Wheel' for each application.</Description>
@@ -14,12 +14,14 @@
     <PackageTags>Utility Extensions Notification FileOperation Validation Encryption Strategy DesignPattern</PackageTags>
     <PackageIcon>Utility.jpeg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="8.0.2" />
     <None Include="Utility.jpeg" Pack="true" PackagePath=""/>
     <None Include="..\README.md" Pack="true" PackagePath=""/>
+    <None Include="..\LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
