@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <PackageId>EasyUtility.For.All</PackageId>
     <Authors>Vikram Paul</Authors>
-    <Version>1.0.0</Version>
+    <Version>2.0</Version>
     <Product>EasyUtility</Product>
     <Description>'EasyUtility' is a .NET library that contains practical features needed for daily development. Its goal is to assist developers worldwide in avoiding the need to create 'The Wheel' for each application.</Description>
     <RepositoryUrl>https://github.com/VikramPaul007/EasyUtility</RepositoryUrl>
-    <ReleaseNotes>Release notes for version 1.0.0.</ReleaseNotes>
+    <ReleaseNotes>Release notes for version 2.0</ReleaseNotes>
     <PackageTags>Utility Extensions Notification FileOperation Validation Encryption Strategy DesignPattern</PackageTags>
     <PackageIcon>Utility.jpeg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
