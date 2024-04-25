@@ -1,6 +1,7 @@
-﻿namespace Utility.Lib.Domains.Notification;
-
-public interface INotifier
+﻿namespace Utility.Lib.Domains.Notification
 {
-    bool Notify();
+    public interface INotifier
+    {
+        bool Notify();
+    }
 }

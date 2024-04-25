@@ -1,30 +1,34 @@
 ﻿using System.Net.Mail;
 
-namespace Utility.Lib.Domains.Notification;
-internal sealed class EmailNotifier : INotifier
+namespace Utility.Lib.Domains.Notification
 {
-    private readonly SmtpClient smtpClient;
-    private readonly EmailMessage emailMessage;
+    internal sealed class EmailNotifier : INotifier
+    {
+        private readonly SmtpClient smtpClient;
+        private readonly EmailMessage emailMessage;
 
-    public EmailNotifier(SmtpClient smtpClient,
-        EmailMessage emailMessage)
-    {
-        this.smtpClient = smtpClient;
-        this.emailMessage = emailMessage;
-    }
-    public bool Notify()
-    {
-        using MailMessage mailMessage = new()
+        public EmailNotifier(SmtpClient smtpClient,
+            EmailMessage emailMessage)
         {
-            Subject = emailMessage.Subject,
-            Body = emailMessage.Body
-        };
+            this.smtpClient = smtpClient;
+            this.emailMessage = emailMessage;
+        }
+        public bool Notify()
+        {
+            using (MailMessage mailMessage = new MailMessage()
+            {
+                Subject = emailMessage.Subject,
+                Body = emailMessage.Body
+            })
+            {
 
-        mailMessage.From =
-            new MailAddress(emailMessage.From, emailMessage.FromDisplayName ?? emailMessage.From);
+                mailMessage.From =
+                    new MailAddress(emailMessage.From, emailMessage.FromDisplayName ?? emailMessage.From);
 
-        smtpClient.Send(mailMessage);
+                smtpClient.Send(mailMessage);
+            }
 
-        return true;
+            return true;
+        }
     }
 }

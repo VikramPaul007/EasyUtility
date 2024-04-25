@@ -1,8 +1,12 @@
-﻿namespace Utility.Lib.Domains.Notification;
-internal sealed class SmsNotifier : INotifier
+﻿using System;
+
+namespace Utility.Lib.Domains.Notification
 {
-    public bool Notify()
+    internal sealed class SmsNotifier : INotifier
     {
-        throw new NotImplementedException();
+        public bool Notify()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
