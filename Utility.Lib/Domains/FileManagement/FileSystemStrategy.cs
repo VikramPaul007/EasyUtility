@@ -1,21 +1,25 @@
-﻿namespace Utility.Lib.Domains.FileManagement;
+﻿using System.IO;
+using System.Threading.Tasks;
 
-public sealed class FileSystemStrategy : IFileManagerStrategy
+namespace Utility.Lib.Domains.FileManagement
 {
-    public void Delete(string filePath)
+    public sealed class FileSystemStrategy : IFileManagerStrategy
     {
-        File.Delete(filePath);
-    }
+        public void Delete(string filePath)
+        {
+            File.Delete(filePath);
+        }
 
-    public async Task<byte[]> Download(string filePath)
-    {
-        byte[] fileBytes = await File.ReadAllBytesAsync(filePath);
+        public async Task<byte[]> Download(string filePath)
+        {
+            byte[] fileBytes = await File.ReadAllBytesAsync(filePath);
 
-        return fileBytes;
-    }
+            return fileBytes;
+        }
 
-    public async void Upload(string filePath, byte[] bytes)
-    {
-        await File.WriteAllBytesAsync(filePath, bytes);
+        public async void Upload(string filePath, byte[] bytes)
+        {
+            await File.WriteAllBytesAsync(filePath, bytes);
+        }
     }
 }

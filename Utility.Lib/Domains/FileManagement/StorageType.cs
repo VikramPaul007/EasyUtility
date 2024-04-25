@@ -1,12 +1,14 @@
-﻿namespace Utility.Lib.Domains.FileManagement;
-public enum StorageType
+﻿namespace Utility.Lib.Domains.FileManagement
 {
-    FileSystem,
-    NAS,
-    SQL,
-    NoSQL,
-    ObjectStore,
-    CloudStore,
-    CDN,
-    DocumentManagementSystem
+    public enum StorageType
+    {
+        FileSystem,
+        NAS,
+        SQL,
+        NoSQL,
+        ObjectStore,
+        CloudStore,
+        CDN,
+        DocumentManagementSystem
+    }
 }

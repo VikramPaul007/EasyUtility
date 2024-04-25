@@ -1,5 +1,7 @@
-﻿namespace Utility.Lib.Domains.Notification;
-public interface INotifierFactory
+﻿namespace Utility.Lib.Domains.Notification
 {
-    INotifier CreateNotifier();
+    public interface INotifierFactory
+    {
+        INotifier CreateNotifier();
+    }
 }

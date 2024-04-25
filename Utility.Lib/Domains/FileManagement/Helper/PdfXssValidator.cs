@@ -1,28 +1,31 @@
-﻿
-using iText.Kernel.Pdf;
+﻿using iText.Kernel.Pdf;
+using System;
+using System.IO;
 
-namespace Utility.Lib.Domains.FileManagement.Helper;
-public class PdfXssValidator : IXssValidator
+namespace Utility.Lib.Domains.FileManagement.Helper
 {
-    public bool Validate(Stream stream)
+    public class PdfXssValidator : IXssValidator
     {
-        return !ContainsJavascript(stream);
-    }
+        public bool Validate(Stream stream)
+        {
+            return !ContainsJavascript(stream);
+        }
 
-    public bool Validate(byte[] bytes)
-    {
-        throw new NotImplementedException();
-    }
+        public bool Validate(byte[] bytes)
+        {
+            throw new NotImplementedException();
+        }
 
-    private static bool ContainsJavascript(Stream stream)
-    {
-        using PdfReader pdfReader = new(stream);
-        using PdfDocument pdfDocument = new(pdfReader);
-        PdfNameTree javascript = pdfDocument.GetCatalog().GetNameTree(PdfName.JavaScript);
+        private static bool ContainsJavascript(Stream stream)
+        {
+            using PdfReader pdfReader = new PdfReader(stream);
+            using PdfDocument pdfDocument = new PdfDocument(pdfReader);
+            PdfNameTree javascript = pdfDocument.GetCatalog().GetNameTree(PdfName.JavaScript);
 
-        if (javascript != null && javascript.GetKeys().Count > 0)
-            return true;
+            if (javascript != null && javascript.GetKeys().Count > 0)
+                return true;
 
-        return false;
+            return false;
+        }
     }
 }
