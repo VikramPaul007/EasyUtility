@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Utility.Lib.Common
 {
-    internal class EmailValidator
+    internal sealed class EmailValidator
     {
         public static ValidationResult Validate(string email, ValidationContext context)
         {

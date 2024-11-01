@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Utility.Lib.Domains.FileManagement.Helper
 {
-    public class PdfXssValidator : IXssValidator
+    public sealed class PdfXssValidator : IXssValidator
     {
         public bool Validate(Stream stream)
         {
